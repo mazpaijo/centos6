@@ -31,7 +31,7 @@ Tested on
 * badvpn-udpgw port 7300
 
 ### What's features included
-* Webmin http://[ip]:10000/
+* Webmin http(s)://[ip]:10000/
 * vnstat http://[ip]/vnstat/
 * MRTG http://[ip]/mrtg/
 * Timezone : Asia/Jakarta
