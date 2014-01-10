@@ -203,6 +203,10 @@ chmod +x user-login.sh
 chmod +x user-expire.sh
 chmod +x user-limit.sh
 
+# cron
+service crond start
+chkconfig crond on
+
 # finalisasi
 chown -R nginx:nginx /home/vps/public_html
 service nginx start
@@ -215,6 +219,8 @@ service dropbear restart
 service fail2ban restart
 service squid restart
 service webmin restart
+service crond start
+chkconfig crond on
 
 # info
 clear
