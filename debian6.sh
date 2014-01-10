@@ -178,6 +178,7 @@ curl http://script.jualssh.com/user-login.sh > user-login.sh
 curl http://script.jualssh.com/user-expire.sh > user-expire.sh
 curl http://script.jualssh.com/user-limit.sh > user-limit.sh
 echo "0 0 * * * root /root/user-expire.sh" > /etc/cron.d/user-expire
+sed -i '$ i\screen -AmdS user-limit /root/user-limit.sh --listen-addr 127.0.0.1:7300' /etc/rc.local
 chmod +x bench-network.sh
 chmod +x speedtest_cli.py
 chmod +x ps_mem.py
