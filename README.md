@@ -2,24 +2,34 @@ Automatic Script Installer by KangArie
 ==========
 
 ## Usage
-### Centos
+### Centos 6 32/64bit
 ```
 wget https://raw.github.com/arieonline/autoscript/master/centos6.sh
-bash centos6
+bash centos6.sh
 ```
 Tested on
 * CentOS 6 32 bit
 * CentOS 6 64 bit
 * OpenVZ only
 
-### Debian
+### Debian 6 32bit
 ```
 wget https://raw.github.com/arieonline/autoscript/master/debian6.sh
-bash debian6
+bash debian6.sh
 ```
 Tested on
 * Debian 6 32 bit
 * OpenVZ only
+
+### Debian 7 32bit
+```
+wget https://raw.github.com/arieonline/autoscript/master/debian7.sh
+bash debian7.sh
+```
+Tested on
+* Debian 7 32 bit
+* OpenVZ only
+
 
 ## Description
 
