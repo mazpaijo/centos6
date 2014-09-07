@@ -1,4 +1,4 @@
-Automatic Script Installer by KangArie
+Automatic Script Installer by KangArie edited by Mazpaijo
 ==========
 
 ## Usage
