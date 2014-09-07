@@ -67,10 +67,10 @@ echo "screenfetch" >> .bash_profile
 
 # install webserver
 cd
-wget -O /etc/nginx/nginx.conf "https://raw.github.com/mazpaijo/centos6/master/conf/nginx.conff"
+wget -O /etc/nginx/nginx.conf "https://raw.github.com/mazpaijo/centos6/master/conf/nginx.conf"
 sed -i 's/www-data/nginx/g' /etc/nginx/nginx.conf
 mkdir -p /home/vps/public_html
-echo "<pre>Setup by KangArie | JualSSH.com | @arieonline | 7946F434</pre>" > /home/vps/public_html/index.html
+echo "<pre>iin halaman home biasa" > /home/vps/public_html/index.html
 echo "<?php phpinfo(); ?>" > /home/vps/public_html/info.php
 rm /etc/nginx/conf.d/*
 wget -O /etc/nginx/conf.d/vps.conf "https://raw.github.com/mazpaijo/centos6/master/conf/vps.conf"
@@ -161,8 +161,8 @@ tar xf vnstat_php_frontend-1.5.1.tar.gz
 rm vnstat_php_frontend-1.5.1.tar.gz
 mv vnstat_php_frontend-1.5.1 vnstat
 cd vnstat
-sed -i 's/eth0/venet0/g' config.php
-sed -i "s/\$iface_list = array('venet0', 'sixxs');/\$iface_list = array('venet0');/g" config.php
+sed -i 's/eth0/eth0/g' config.php
+sed -i "s/\$iface_list = array('eth0', 'sixxs');/\$iface_list = array('venet0');/g" config.php
 sed -i "s/\$language = 'nl';/\$language = 'en';/g" config.php
 sed -i 's/Internal/Internet/g' config.php
 sed -i '/SixXS IPv6/d' config.php
@@ -220,7 +220,7 @@ chkconfig crond on
 
 # info
 clear
-echo "JualSSH.com | @arieonline | KangArie | 7946F434"
+echo "Mazpaijo -- sadarssh.tk"
 echo "==============================================="
 echo ""
 echo "Service"
@@ -236,9 +236,6 @@ echo "------"
 echo "./ps_mem.py"
 echo "./speedtest_cli.py --share"
 echo "./bench-network.sh"
-echo "./user-login.sh"
-echo "./user-expire.sh"
-echo "./user-limit.sh 2"
 echo ""
 echo "Account Default (utk SSH dan VPN)"
 echo "---------------"
