@@ -106,9 +106,9 @@ cd /etc/openvpn/
 wget -O /etc/openvpn/1194-client.ovpn "https://raw.github.com/mazpaijo/centos6/master/conf/1194-client.conf"
 sed -i $MYIP2 /etc/openvpn/1194-client.ovpn;
 PASS=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 15 | head -n 1`;
-useradd -M -s /bin/false KangArie
-echo "KangArie:$PASS" | chpasswd
-echo "KangArie" > pass.txt
+useradd -M -s /bin/false mazpaijo
+echo "mazpaijo:$PASS" | chpasswd
+echo "mazpaijo" > pass.txt
 echo "$PASS" >> pass.txt
 tar cf client.tar 1194-client.ovpn pass.txt
 cp client.tar /home/vps/public_html/
@@ -251,7 +251,7 @@ echo "./user-limit.sh 2"
 echo ""
 echo "Account Default (utk SSH dan VPN)"
 echo "---------------"
-echo "User     : KangArie"
+echo "User     : mazpaijo"
 echo "Password : $PASS"
 echo ""
 echo "Fitur lain"
