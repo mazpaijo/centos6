@@ -50,10 +50,10 @@ service exim stop
 chkconfig exim off
 
 # setting vnstat
-vnstat -u -i venet0
+vnstat -u -i eth0
 echo "MAILTO=root" > /etc/cron.d/vnstat
 echo "*/5 * * * * root /usr/sbin/vnstat.cron" >> /etc/cron.d/vnstat
-sed -i 's/eth0/venet0/g' /etc/sysconfig/vnstat
+sed -i 's/eth0/eth0/g' /etc/sysconfig/vnstat
 service vnstat restart
 chkconfig vnstat on
 
@@ -193,20 +193,11 @@ cd
 wget -O speedtest_cli.py "https://raw.github.com/sivel/speedtest-cli/master/speedtest_cli.py"
 wget -O bench-network.sh "https://raw.github.com/mazpaijo/centos6/master/conf/bench-network.sh"
 wget -O ps_mem.py "https://raw.github.com/pixelb/ps_mem/master/ps_mem.py"
-wget -O limit.sh "https://raw.github.com/mazpaijo/centos6/master/conf/limit.sh"
-curl http://script.jualssh.com/user-login.sh > user-login.sh
-curl http://script.jualssh.com/user-expire.sh > user-expire.sh
-curl http://script.jualssh.com/user-limit.sh > user-limit.sh
-echo "0 0 * * * root /root/user-expire.sh" > /etc/cron.d/user-expire
-sed -i '$ i\screen -AmdS limit /root/limit.sh' /etc/rc.local
-sed -i '$ i\screen -AmdS limit /root/limit.sh' /etc/rc.d/rc.local
+
 chmod +x bench-network.sh
 chmod +x speedtest_cli.py
 chmod +x ps_mem.py
-chmod +x user-login.sh
-chmod +x user-expire.sh
-chmod +x user-limit.sh
-chmod +x limit.sh
+
 
 # cron
 service crond start
